@@ -4,13 +4,12 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { FaHeart } from 'react-icons/fa6';
 import { Link, useParams } from 'react-router-dom';
-import { books } from '../data/books';
 
-function MaterialDetailPage() {
-  const { slug } = useParams();
-  const book = books.find((item) => item.slug === slug);
-  const [favoriteSlugs, setFavoriteSlugs] = useState(() => new Set());
-  const isFavorite = favoriteSlugs.has(slug);
+function MaterialDetailPage({ books }) {
+  const { id } = useParams();
+  const book = books.find((item) => item.id === Number(id));
+  const [favoriteIds, setFavoriteIds] = useState(() => new Set());
+  const isFavorite = favoriteIds.has(id);
 
   if (!book) {
     return (
@@ -34,15 +33,17 @@ function MaterialDetailPage() {
                   <span>{book.author}</span>
                   <strong>{book.title}</strong>
                 </div>
-                <img
-                  src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg?default=false`}
-                  alt={`Sampul buku ${book.title} karya ${book.author}`}
-                  onError={(event) => event.currentTarget.remove()}
-                />
+                {book.image && (
+                  <img
+                    src={book.image}
+                    alt={`Sampul buku ${book.title} karya ${book.author}`}
+                    onError={(event) => event.currentTarget.remove()}
+                  />
+                )}
               </div>
             </div>
             <div className="col-md-8">
-              <span className="book-detail__category">{book.category}</span>
+              <span className="book-detail__category">{book.year}</span>
               <h1 className="display-5 fw-bold">{book.title}</h1>
               <p className="lead text-muted">oleh {book.author}</p>
               <section className="book-detail__synopsis" aria-labelledby="book-synopsis-heading">
@@ -50,7 +51,6 @@ function MaterialDetailPage() {
                 <p className="book-detail__description">{book.description}</p>
               </section>
               <div className="book-detail__purchase">
-                <p className="book-detail__price mb-0">{book.price}</p>
                 <div className="d-flex flex-wrap gap-2 mt-3">
                   <Button
                     type="button"
@@ -58,13 +58,10 @@ function MaterialDetailPage() {
                     aria-pressed={isFavorite}
                     aria-label={isFavorite ? 'Hapus dari favorit' : 'Simpan ke favorit'}
                     onClick={() => {
-                      setFavoriteSlugs((previous) => {
+                      setFavoriteIds((previous) => {
                         const next = new Set(previous);
-                        if (next.has(slug)) {
-                          next.delete(slug);
-                        } else {
-                          next.add(slug);
-                        }
+                        if (next.has(id)) next.delete(id);
+                        else next.add(id);
                         return next;
                       });
                     }}

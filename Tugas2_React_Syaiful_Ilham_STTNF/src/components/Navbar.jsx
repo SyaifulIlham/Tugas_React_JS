@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const navItems = [
   { path: '/', label: 'Beranda' },
-  { path: '/#buku', label: 'Koleksi buku' },
+  { path: '/book', label: 'Book' },
   { path: '/team', label: 'Team' },
   { path: '/contact', label: 'Kontak' },
 ];

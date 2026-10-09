@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import MaterialGrid from '../components/MaterialGrid';
 
-function HomePage() {
+function HomePage({ books }) {
   return (
     <main>
       <Container fluid className="home-hero-container my-4 my-lg-5">
@@ -41,7 +41,7 @@ function HomePage() {
         </section>
       </Container>
       <div id="buku">
-        <MaterialGrid />
+        <MaterialGrid books={books} />
       </div>
     </main>
   );
