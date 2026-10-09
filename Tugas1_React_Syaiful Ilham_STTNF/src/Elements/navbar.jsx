@@ -39,7 +39,7 @@ function NavbarComponent({ currentPage, onNavigate }) {
           </Nav>
           <Nav className="d-flex gap-2">
             <Nav.Link className="text-center btn btn-outline-primary bg-primary text-white" href="#deets">
-              More Pages
+              Register
             </Nav.Link>
             <Nav.Link className="text-center btn btn-primary bg-primary text-white" eventKey={2} href="#memes">
               Login

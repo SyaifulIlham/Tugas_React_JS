@@ -13,13 +13,13 @@ function Cardgrid() {
             <Card className="card-list__card h-100">
               <Card.Img
                 variant="top"
-                src="https://media-cdn.tripadvisor.com/media/photo-c/1280x250/17/15/6d/d6/paris.jpg"
+                src="https://gpu.id/data-gpu/images/uploads/dirimg_buku/616153002.jpg"
                 alt="Paris"
               />
               <Card.Body>
-                <Card.Title>Card title</Card.Title>
+                <Card.Title>Buku baru</Card.Title>
                 <Card.Text>
-                  A short description for this item.
+                  Buku baru yang akan segera hadir di toko kami. Tetap pantau untuk
                 </Card.Text>
               </Card.Body>
             </Card>

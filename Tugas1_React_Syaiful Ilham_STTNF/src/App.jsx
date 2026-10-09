@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 import NavbarComponent from './Elements/navbar';
 import Cardgrid from './Elements/cardlist';
 import Footer from './Elements/footer';
@@ -11,24 +12,26 @@ function HomePage() {
     <>
       <div className="container my-5">
         <div className="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg home-hero">
-          <div className="col-lg-7 p-3 p-lg-5 pt-lg-3">
-            <h1 className="display-4 fw-bold lh-1 text-body-emphasis">Kelas React JS Asik</h1>
-            <p className="lead">
-              Ayo kita belajar React JS, React JS adalah library JavaScript yang digunakan untuk membangun antarmuka pengguna (user interface) yang interaktif dan responsif. React JS dikembangkan oleh Facebook dan dirilis sebagai open-source pada tahun 2013.
-            </p>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2 fw-bold">
-                Pelajari
-              </button>
-              <button type="button" className="btn btn-outline-secondary btn-lg px-4">
-                Info Lebih Lanjut
-              </button>
+           <div className="col-lg-6">
+              <p className="eyebrow">Cerita Indonesia, dekat di hati</p>
+              <h1 className="display-3 fw-bold lh-sm text-body-emphasis">
+                Temukan cerita yang <span className="home-hero__accent">tinggal lama.</span>
+              </h1>
+              <p className="lead mt-3">
+                Pilihan buku Indonesia yang kami suka, dari kisah keluarga dan
+                persahabatan sampai cerita yang membuka cara pandang baru.
+              </p>
+              <div className="d-flex flex-wrap align-items-center gap-3 mt-4">
+                <Button href="#buku" size="lg" className="home-hero__button">
+                  Jelajahi koleksi
+                </Button>
+                <span className="home-hero__note">Dibaca, disimpan, diceritakan kembali.</span>
+              </div>
             </div>
-          </div>
           <div className="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
             <img
               className="rounded-lg-3 img-fluid"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5iXbI9Yy6RUJSrbzKW9LVhjajpxb01cuKmUp6Sdd4fmiOyGevjsPNyvQ&s=10"
+              src="https://upload.wikimedia.org/wikipedia/id/8/8e/Laskar_pelangi_sampul.jpg?utm_source=id.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled"
               alt="Bootstrap docs"
               width="720"
             />
